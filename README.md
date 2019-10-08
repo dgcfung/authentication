@@ -32,9 +32,9 @@ The concept is a user can sign up and sign in aka authenticate. Then for specifi
 
 Cool so what does this look like?
 
-![](signup.png)
-
 ## Sign Up
+
+![](signup.png)
 
 1. The user fills out a form on a react app including username, email, and password
 2. Our react app makes a POST request to the `/users` api endpoint with the the user data (username, email, and password)
@@ -46,9 +46,9 @@ Cool so what does this look like?
 > This token is what the client will now use to identify that the user is who they say they are, instead of having to make a request with username/password every time we interact with the server.
 6. Our react app takes the JWT token that it received from the server and stores it in the browser's localStorage
 
-![](signin.png)
-
 ## Sign In
+
+![](signin.png)
 
 
 
