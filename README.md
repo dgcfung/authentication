@@ -2,7 +2,7 @@
 
 # Authentication
 
-![](user-friendly.png)
+![](user-friendly.gif)
 
 What is Authentication? Well it's the hardest topic in our curriculum. Ok joke aside, what is Auth?
 
