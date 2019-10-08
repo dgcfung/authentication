@@ -32,6 +32,16 @@ The concept is a user can sign up and sign in aka authenticate. Then for specifi
 
 Cool so what does this look like?
 
+Keywords:
+
+### Authentication
+### Authorization
+### Hashing
+### Encrypting
+### Salt Rounds
+### JWT
+### JWT Token
+
 ## Sign Up
 
 ![](signup.png)
@@ -49,6 +59,22 @@ Cool so what does this look like?
 ## Sign In
 
 ![](signin.png)
+
+Given: The user has already signed up (the user is created in our database)
+
+1. The user enters their username and password in our react app
+2. Our react app makes a POST request to the `/login` endpoint on our server with username and password
+3. We encrypt the password sent from the client and compare the encrypted password with the password_digest that was stored in our database. If they both match, the user is who they say they are. They are "authenticated".
+4. If they are authenticated on the server, then we use the [JWT library](https://jwt.io) to create a JWT token for that user
+> Remember the token is a unique identifier. Instead of us passing around username/password, the token is equivalent.
+5. Have the server respond with the generated JWT token to the client
+6. Our react app receives the token and stores it in [localStorage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage)
+
+Why do we need to store the token in localStorage?
+
+## Accessing a Protected Route / Resource
+
+![](protected.png)
 
 
 
