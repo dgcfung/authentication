@@ -34,6 +34,23 @@ Cool so what does this look like?
 
 ![](signup.png)
 
+## Sign Up
+
+1. The user fills out a form on a react app including username, email, and password
+2. Our react app makes a POST request to the `/users` api endpoint with the the user data (username, email, and password)
+3. In our express app we:
+- take the user data sent from the react app and create a new user in our postgres database
+- we then user the [JWT library](https://jwt.io) to generate a token from the newly created user
+4. For security reasons, we do not store raw passwords in our database. In this step we encrypt the user password, and store the encrypted password (password_digest) in the database
+5. Our express app responds with the newly created user and the token we generated.
+> This token is what the client will now use to identify that the user is who they say they are, instead of having to make a request with username/password every time we interact with the server.
+6. Our react app takes the JWT token that it received from the server and stores it in the browser's localStorage
+
+![](signin.png)
+
+## Sign In
+
+
 
 ## Conclusion
 
