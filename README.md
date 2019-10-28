@@ -15,7 +15,8 @@ By the end of this, students should be able to:
 Turn & Talk with your neighbor and answer the following:
 - What is Authentication?
 - What is Authorization
-Bonus: What is the difference between hashing vs encrypting?
+
+**Bonus**: What is the difference between hashing vs encrypting?
 
 
 ## Introduction
