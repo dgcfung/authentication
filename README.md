@@ -45,7 +45,7 @@ Keywords:
 
 ## Sign Up
 
-![](signup.png)
+![](signUp.png)
 
 1. The user fills out a form on a react app including username, email, and password
 2. Our react app makes a POST request to the `/users` api endpoint with the the user data (username, email, and password)
@@ -59,7 +59,7 @@ Keywords:
 
 ## Sign In
 
-![](signin.png)
+![](signIn.png)
 
 Given: The user has already signed up (the user is created in our database)
 
