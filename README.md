@@ -41,7 +41,10 @@ Keywords:
 ### Encrypting
 ### Salt Rounds
 ### JWT
+### Token Key
+### Payload
 ### JWT Token
+### JWT Signing
 
 ## Sign Up
 
