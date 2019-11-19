@@ -36,15 +36,23 @@ Cool so what does this look like?
 TODO (Need to write about the following topics):
 
 ### Authentication
+Authentication is the ability to give users an identity that we can track.
 ### Authorization
+When we authenticate a user, we then either authorize them to access everything in our web application or only certain parts. For example, an Admin, typically, is authorized to have access to all resources. Authorization is giving users priviledges to whatever resources we define.
 ### Hashing
+Hashing is a one-way function that uses an algorithm to scramble text into a unique digest. It is common practice to hash passwords and store them in a database, rather than store plaintext passwords in databases, that way, if the database is compromised a hacker would gain access to hashed passwords and not the plaintext password (which in all likelihood is used as a password for other websites!)
 ### Encrypting
+Encryption is a two-way function that can encrypt or decrypt via a unique key.
 ### Salt Rounds
-### JWT
-### Token Key
+A Salt Round is a random character or characters that is added to the hashing process to increase the complexity of the hash and make it virtually impossible to crack.
+### [JSON Web Token or JWT (pronounced JOT)](https://jwt.io/introduction)
+JWT is what we use to verify that the user is who they say they are.
+### JWT Token Key or Secret
+The JWT Secret is what we use to sign the JWT Token and make it unique. The idea is that we generate a unique JWT Token with the JWT Secret, we then send that token to a client as a way to give that client some identity (that identity may come with some privileges). The client includes the JWT Token with every request as "proof" as to who they are. The server checks if that JWT Token is a valid token by checking it against the JWT Secret.
 ### Payload
-### JWT Token
+The Payload is whatever data we choose to send within the JWT Token. Keep in mind this data can be seen by anyone who obtains the JWT Token so refrain from adding sensitive information e.g. passwords.
 ### JWT Signing
+JWT Signing is when we construct the JWT Token. It is when we take the JWT Header and Payload, along with the algorithm and generate a JWT Token.
 
 ## Sign Up
 
