@@ -22,8 +22,6 @@ Turn & Talk with your neighbor and answer the following:
 
 ## Introduction
 
-### Authentication
-
 What is Authentication? Well it's the hardest topic in our curriculum. Ok joke aside, what is Auth?
 
 We have learned how to create full-stack applications. There is a problem though. Often we want to limit what a user has access to. So how do we handle this? Welcome.. Authentication.
