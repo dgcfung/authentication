@@ -33,7 +33,7 @@ The concept is a user can sign up and sign in aka authenticate. Then for specifi
 
 Cool so what does this look like?
 
-## Topics
+##
 
 "JSON Web Token is a standard used to create access tokens for an application.
 
@@ -44,44 +44,62 @@ The client will send the token back to the server for every subsequent request, 
 This architecture proves to be very effective in modern Web Apps, where after the user is authenticated we perform API requests either to a REST or a GraphQL API." - https://flaviocopes.com/jwt
 
 ### Authentication
+
 Authentication is the ability to give users an identity that we can track.
 - Authentication is who the user is
-- We can use a JWT Token as a means of authentication
+- We can use a JSON Web Token (JWT) as a means for authentication
+
 ### Authorization
-When we authenticate a user, we then either authorize them to access everything in our web application or only certain parts. For example, an Admin, typically, is authorized to have access to all resources. Authorization is giving users priviledges to whatever resources we define.
-- Authorization is (now that we know who the user is - Authentication) what the user can do
 
-A JWT Token can be a "claim" of who the user is (Authentication) and what the user can do (Authorization)
-JWT Tokens should be "signed" so we can can verify the authenticity of the JWT Token.
+- Authorization is (now that we know who the user is - Authentication) what the user can do; normally we define what resources the user has access to and what actions (CRUD) the user can perform on those resources
+
+A JSON Web Token (JWT) can be a "claim" of who the user is (Authentication) and what the user can do (Authorization)
+
 ### Hashing
-Hashing is a one-way function that uses an algorithm to scramble text into a unique digest. It is common practice to hash passwords and store them in a database, rather than store plaintext passwords in databases, that way, if the database is compromised a hacker would gain access to hashed passwords and not the plaintext password (which in all likelihood is used as a password for other websites!)
-### Encrypting
-Encryption is a two-way function that can encrypt or decrypt via a unique key.
-### Salt Rounds
-A Salt Round is a random character or characters that is added to the hashing process to increase the complexity of the hash and make it virtually impossible to crack.
-### [JSON Web Token or JWT (pronounced JOT)](https://jwt.io/introduction)
-JWT is what we use to verify that the user is who they say they are.
 
-JWT is URL safe encoded data that can be used to verify authenticity. It's a key - we define what we can "open" with that key.
-### JWT Token Key or Secret
-The JWT Secret is what we use to sign the JWT Token and make it unique. The idea is that we generate a unique JWT Token with the JWT Secret, we then send that token to a client as a way to give that client some identity (that identity may come with some privileges). The client includes the JWT Token with every request as "proof" as to who they are. The server checks if that JWT Token is a valid token by checking it against the JWT Secret.
+Hashing is a one-way function that uses an algorithm to scramble text into a unique digest. It is common practice to hash passwords and store them in a database, rather than store plaintext passwords in databases, that way, if the database is compromised a hacker would gain access to hashed passwords and not the plaintext password (which in all likelihood is used as a password for other websites!)
+
+### Encryption
+
+Encryption is a two-way function that can encrypt or decrypt via a unique secret key.
+
+### Salt Rounds
+
+A Salt Round is a random character or characters that is added to the hashing process to increase the complexity of the hash and make it virtually impossible to crack.
+
+### [JSON Web Token or JWT (pronounced JOT)](https://jwt.io/introduction)
+
+JSON Web Token (JWT) is encoded data that is cryptographically signed with a secret that can act like a "key". It can be sent to a client as proof of authenticity and sent back to the server on subsequent requests as proof of the client's authenticity.
+
+### JWT Secret (or Key)
+
+The JWT Secret is what we use to sign the JWT and make it unique. The idea is that we generate a unique JWT Token with the JWT Secret, we then send that token to a client as a way to give that client some identity (that identity usually comes with some privileges - authorization). The client includes the JWT with every request as "proof" of who they are. The server checks if that JWT is a valid token by checking it against the JWT Secret.
+
 ### Payload
-The Payload is whatever data we choose to send within the JWT Token. Keep in mind this data can be seen by anyone who obtains the JWT Token so refrain from adding sensitive information e.g. passwords.
-> The Payload is typically where we set the "cliams" for the user, or in other words, who the user is and what they're allowed to do
+
+The payload is whatever data we choose to send within the JWT. Keep in mind this data can be seen by anyone who obtains the JWT so refrain from adding sensitive information e.g. passwords. Also, make sure to use HTTPS so the JWT is encrypted so the data can only be seen between client and server.
+> The payload is typically where we set the "cliams" for the user, or in other words, who the user is and what they're allowed to do e.g. user id, username or email, user role
+
 ### JWT Signing
-JWT Signing is when we construct the JWT Token. It is when we take the JWT Header and Payload and generate the Signature.
+
+JWT consists of 3 parts: header, payload, and signature. The header is where we define the algorithm we are going to use to create the signature. The payload is data we use to generate the signature. The signature is the result of the algorithm along with the secret, applied on the header and payload.
+
+```js
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjEiL
+CJ1c2VybmFtZSI6ImpvaG4uZG9lIiwiZW1haWwiOiJqb2huQGR
+vZS5jb20ifQ.bJLrnPXWerJO6GSyUQWWuEKWiN-ufXqygrj1fng8vd8
+```
+
+JWT signing creates the signature, and outputs the JWT.
 > Typically, we sign the Header, Payload, and JWT Secret using an HMAC SH-256 algorithm
 
 ### JWT Verify
-When we verify the authenticity of the JWT Token we typically check for three things: 
-- It was created by you (by verifying the signature, using the secret signing key)
-- It hasn't been modified (e.g. some claims were maliciously added)
-- It hasn't expired
-- It is active
+
+This is where we compare the JWT we recieved from the client with a JWT we generate on the server with the secret and the same payload the client has. If the two tokens match, we get back the payload.
 
 ## Sign Up
 
-![](signUp.png)
+![](signup.jpeg)
 
 1. User fills out sign up form on the react app
 2. User clicks submit, an axios POST request with a user object stored in the body of the request is created and sent to the `/signup` endpoint on the express server
@@ -94,7 +112,7 @@ When we verify the authenticity of the JWT Token we typically check for three th
 
 ## Sign In
 
-![](signIn.png)
+![](signin.jpeg)
 
 1. The user fills out the sign in form on the react app
 2. User clicks submit, an axios POST request with a user object stored in the body of the request is created and sent to the `/signin` endpoint on the express server
@@ -104,7 +122,7 @@ When we verify the authenticity of the JWT Token we typically check for three th
 
 ## Accessing a Protected Resource
 
-![](protected.png)
+![](protected.jpeg)
 
 1. The user fills out the update form to edit a specific item
 2. In our React app we check if there is a token in localStorage
