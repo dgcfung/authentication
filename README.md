@@ -94,7 +94,11 @@ JWT signing creates the signature, and outputs the JWT.
 
 This is where we compare the JWT we recieved from the client with a JWT we generate on the server with the secret and the same payload the client has. If the two tokens match, we get back the payload.
 
-# Implementation
+# Hand-Rolling Our Own Authentication System
+
+Let's now go into the details of how we can implement our own authentication system, particularly:
+- creating password digests, so we don't store plaintext passwords in our database and
+- using JWTs to create a token-based authentication system
 
 ## Sign Up
 
