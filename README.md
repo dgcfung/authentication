@@ -9,7 +9,7 @@
 
 ## Learning Objectives
 By the end of this, students should be able to:
-- Understand how to store passwords
+- Understand how to store passwords (we don't)
 - Implement JWT Authentication
 
 ## Framing (5min)
