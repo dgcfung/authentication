@@ -9,12 +9,13 @@
 
 ## Learning Objectives
 By the end of this, students should be able to:
-- Understand & Implement Authentication
+- Understand how to store passwords
+- Implement JWT Authentication
 
 ## Framing (5min)
 Turn & Talk with your neighbor and answer the following:
 - What is Authentication?
-- What is Authorization
+- What is Authorization?
 
 **Bonus**: What is the difference between hashing vs encrypting?
 
