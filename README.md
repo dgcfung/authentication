@@ -28,7 +28,7 @@ What is Authentication? Well it's the hardest topic in our curriculum. Ok joke a
 
 We have learned how to create full-stack applications. There is a problem though. Often we want to limit what a user has access to. So how do we handle this? Welcome.. Authentication.
 
-Authentication proves that the user is who he or she says they are. And with that information we can "authorize" the user to access whatever resources we would like to allow them to access.
+Authentication proves that the user is who they say they are. And with that information we can "authorize" the user to access whatever resources we would like to allow them to access.
 
 The concept is a user can sign up and sign in aka authenticate. Then for specific resources we can check if they're authenticated - if they are, then allow them to interact with the resource otherwise, tell them they do not have access.
 
