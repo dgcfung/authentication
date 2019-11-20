@@ -100,6 +100,8 @@ Let's now go into the details of how we can implement our own authentication sys
 - creating password digests, so we don't store plaintext passwords in our database and
 - using JWTs to create a token-based authentication system
 
+Let's look at Sign Up first!
+
 ## Sign Up
 
 ![](signup.jpeg)
