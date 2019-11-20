@@ -36,6 +36,7 @@ Before we get into implementation we need to go over a few key concepts.
 
 ## 
 
+```
 "JSON Web Token is a standard used to create access tokens for an application.
 
 It works this way: the server generates a token that certifies the user identity, and sends it to the client.
@@ -45,6 +46,10 @@ The client will send the token back to the server for every subsequent request, 
 This architecture proves to be very effective in modern Web Apps, where after the user is authenticated we perform API requests either to a REST or a GraphQL API." 
 
 -- https://flaviocopes.com/jwt
+
+```
+
+## Concepts
 
 ### Authentication
 
