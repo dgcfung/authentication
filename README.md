@@ -44,7 +44,7 @@ The client will send the token back to the server for every subsequent request, 
 
 This architecture proves to be very effective in modern Web Apps, where after the user is authenticated we perform API requests either to a REST or a GraphQL API." 
 
- - https://flaviocopes.com/jwt
+-- https://flaviocopes.com/jwt
 
 ### Authentication
 
