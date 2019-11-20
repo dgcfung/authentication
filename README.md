@@ -32,9 +32,9 @@ Authentication proves that the user is who they say they are. Authentication giv
 
 The concept is a user can sign up and sign in aka authenticate. Then for specific resources we can check if they're authenticated - if they are, then allow them to interact with the resource otherwise, tell them they do not have access.
 
-Cool so what does this look like?
+Before we get into implementation we need to go over a few key concepts.
 
-##
+## 
 
 "JSON Web Token is a standard used to create access tokens for an application.
 
@@ -42,7 +42,9 @@ It works this way: the server generates a token that certifies the user identity
 
 The client will send the token back to the server for every subsequent request, so the server knows the request comes from a particular identity.
 
-This architecture proves to be very effective in modern Web Apps, where after the user is authenticated we perform API requests either to a REST or a GraphQL API." - https://flaviocopes.com/jwt
+This architecture proves to be very effective in modern Web Apps, where after the user is authenticated we perform API requests either to a REST or a GraphQL API." 
+
+- https://flaviocopes.com/jwt
 
 ### Authentication
 
