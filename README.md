@@ -94,6 +94,8 @@ JWT signing creates the signature, and outputs the JWT.
 
 This is where we compare the JWT we recieved from the client with a JWT we generate on the server with the secret and the same payload the client has. If the two tokens match, we get back the payload.
 
+# Implementation
+
 ## Sign Up
 
 ![](signup.jpeg)
