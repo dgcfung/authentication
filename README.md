@@ -48,7 +48,7 @@ Authentication is the ability to give users an identity that we can track.
 
 ### Authorization
 
-- Authorization is (now that we know who the user is - Authentication) what the user can do; normally we define what resources the user has access to and what actions (CRUD) the user can perform on those resources
+- Authorization is (now that we know who the user is - Authentication) what can this user do? This is where define what resources the user has access to and what actions (CRUD) the user can perform on those resources
 
 A JSON Web Token (JWT) can be a "claim" of who the user is (Authentication) and what the user can do (Authorization)
 
