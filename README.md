@@ -17,7 +17,7 @@ Turn & Talk with your neighbor and answer the following:
 - What is Authentication?
 - What is Authorization?
 
-**Bonus**: What is the difference between hashing vs encrypting?
+**Bonus**: What is the difference between [hashing vs encrypting](https://gcn.com/articles/2013/12/02/hashing-vs-encryption.aspx)?
 
 
 ## Introduction
@@ -52,7 +52,7 @@ Authentication is the ability to give users an identity that we can track.
 
 A JSON Web Token (JWT) can be a "claim" of who the user is (Authentication) and what the user can do (Authorization)
 
-### Hashing
+### [Hashing](https://medium.com/tech-tales/what-is-hashing-6edba0ebfa67)
 
 Hashing is a one-way function that uses an algorithm to scramble text into a unique digest. It is common practice to hash passwords and store them in a database, rather than store plaintext passwords in databases, that way, if the database is compromised a hacker would gain access to hashed passwords and not the plaintext password (which in all likelihood is used as a password for other websites!)
 
