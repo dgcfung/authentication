@@ -151,6 +151,26 @@ Authentication is found in nearly every application we interact with. In this le
 
 -- Happy Coding :)
 
-## Feedback
+## Associations Lab
 
-> [Take a minute to give us feedback on this lesson so we can improve it!](https://forms.gle/vgUoXbzxPWf4oPCX6)
+Take a peek inside the models folder and you may find there are no associations between the `User` and `Item` models. Let's create the One to Many relationship between `User` and `Item`.
+
+Be sure to update *all* of the following files:
+
+- `models/user.js`
+- `models/item.js`
+- `migrations/*-create-item.js`
+- `seeders/*-items.js`
+
+## Authorization Lab
+
+Secure the `POST`, `PUT` and `DELETE` actions for all `/items`. Ensure that only authenticated users can create, edit, or delete *their own* items. 
+
+### Bonus: Change Password
+
+Refactor the blank `changePassword` method to change the current user's password:
+
+```js
+// controllers/index.js
+const changePassword = async (req, res) => {}
+```
